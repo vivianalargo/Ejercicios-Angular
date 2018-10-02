@@ -1,0 +1,14 @@
+<hello name="{{ name }}"></hello>
+<form>
+	<div>
+		<input type="search" placeholder="{{question}}" #search>
+	</div>
+  <br>
+	<button (click)="answerQuestion(search.value)">{{btnResult}}</button>
+</form>
+
+<div *ngIf="result">
+	<h1>{{result.answer | uppercase}}</h1>
+  <br>
+	<img [src]="result.image" alt="" />
+</div>

@@ -1,0 +1,32 @@
+<h2>Desafío 6 - Construyendo una historia</h2>
+
+<form #form="ngForm" (ngSubmit)="generate(form.value)">
+  <div class="form-group">
+    <label>Nombre: 
+		  <input type="text" placeholder="Ingresa un nombre" name="name" ngModel>
+    </label>
+	</div>
+  <div>
+    <p>Encontremos el nombre por género</p>
+	</div>
+  <div>
+    <label>Edad: 
+		  <input type="number" placeholder="Ingresa una edad" name="age" ngModel>
+    </label>
+	</div>	
+	<div>
+    <label>Animal 
+		  <input type="text" placeholder="Ingresa un animal" name="animal" ngModel>
+    </label>
+	</div>
+  <div class="form-group">
+    <button type="submit">Genera la historia</button>
+  </div>
+</form>
+
+<div *ngIf="showHistory">
+  <h1>La experiencia de NGColombia para <strong>  {{formValues.name}} </strong></h1>
+  <p><strong> {{formValues.name}}  </strong> es un <span>chico/chica (dependiendo del género)</span>, con una gran energía y personalidad, que le encanta el código.</p>
+  <p><strong>  {{formValues.name}}  </strong>, a sus <span>{{formValues.age}} </span> años, le encantan los peluches con forma de<span>{{formValues.animal}}</span></p>
+  <p>Un caluroso día un amigo le hablo sobre <strong>NgGirls</strong> a <strong>  {{formValues.name}} </strong>. <strong>  {{formValues.name}} </strong> inmediatamente aplicó a la convocatoria con la expectativa de tener una maravillosa e increible experiencia ...</p>
+</div>
